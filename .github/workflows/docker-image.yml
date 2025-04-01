@@ -24,4 +24,5 @@ jobs:
         run: |
           IMAGE_NAME=ghcr.io/${{ github.repository }}/fastapi-app:latest
           docker build -t $IMAGE_NAME .
+          echo "Pushing Image"
           docker push $IMAGE_NAME
