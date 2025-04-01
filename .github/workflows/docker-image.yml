@@ -14,10 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 🔹 Step 2: Log in to GitHub Container Registry (GHCR)
-      - name: Log in to GitHub Container Registry
+      - name: Log in to GitHub Container Registry with PAT
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+          echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+
 
       # 🔹 Step 3: Build and push Docker image
       - name: Build and push Docker image
