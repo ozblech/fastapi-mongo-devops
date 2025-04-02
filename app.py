@@ -3,8 +3,10 @@ from pymongo import MongoClient
 
 app = FastAPI()
 
+# Get MongoDB URL from environment variable (or use default)
+mongo_url = os.getenv("MONGO_URL", "mongodb://my-mongodb:27017/")
 # Connect to MongoDB
-client = MongoClient("mongodb://my-mongodb:27017/")
+client = MongoClient(mongo_url)
 db = client["testdb"]
 collection = db["items"]
 
