@@ -5,7 +5,8 @@ from pymongo import MongoClient
 app = FastAPI()
 
 # Get MongoDB URL from environment variable (or use default)
-mongo_url = os.getenv("MONGO_URL", "mongodb://my-mongodb:27017/")
+# mongo_url = os.getenv("MONGO_URL", "mongodb://my-mongodb:27017/")
+mongo_url = "mongodb://my-mongodb:27017/"
 # Connect to MongoDB
 client = MongoClient(mongo_url)
 db = client["testdb"]
