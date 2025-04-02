@@ -20,4 +20,4 @@ async def get_items():
 
 @app.get("/")
 async def root():
-    return {"message": "FastAPI is running!"}
+    return {"message": "FastAPI is running OK!"}
